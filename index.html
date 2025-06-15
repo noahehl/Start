@@ -7,7 +7,7 @@
     <script>
         function checkAnswer() {
             var answer = document.getElementById("answer").value.toLowerCase();
-            if (answer === "arpke") {
+            if (answer === "Wasser") {
                 window.location.href = "https://www.google.com/maps/dir/Elbinger+Str.+13,+31275+Lehrte/Nasser+Kamp,+31275+Lehrte";
             } else {
                 alert("Falsche Antwort! Bitte versuche es erneut.");
@@ -16,9 +16,9 @@
     </script>
 </head>
 <body>
-    <h1>In welchen Ort befinden wir uns?</h1>
-    <p>Bitte gib den Namen des Ortes ein:</p>
-    <input type="text" id="answer" placeholder="Ort eingeben...">
+    <h1>Welche Flüssigkeit benutzen wir zum Löschen?</h1>
+    <p>Bitte gib deine Antwort an:</p>
+    <input type="text" id="answer" placeholder="Antwort eingeben...">
     <button onclick="checkAnswer()">Antwort überprüfen</button>
 </body>
 </html>
