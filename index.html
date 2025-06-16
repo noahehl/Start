@@ -3,13 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ortsfrage</title>
+    <title>Ortsfrage mit Gruppen</title>
     <script>
         function checkAnswer() {
             var answer = document.getElementById("answer").value.toLowerCase();
-            var answer1 = document.getElementById("answer1").value.toLowerCase();
-            if (answer === "wasser") and (answer1 === "arpke")
-                window.location.href = "https://www.google.com/maps/dir/Elbinger+Str.+13,+31275+Lehrte/Nasser+Kamp,+31275+Lehrte";
+            var group = document.getElementById("group").value;
+
+            if (answer === "arpke") {
+                var routes = {
+                    "Arpke": "https://www.google.com/maps/dir/Am+Waldbad+5,+31275+Lehrte/Bauwagen+der+Arpker+Waldzwerge,+Hasendamm,+31275+Lehrte",
+                    "Aligse": "https://www.google.com/maps/dir/Am+Waldbad+5,+31275+Lehrte/Am+Waldbad+5,+31275+Lehrte",
+                    "Steinwedel": "https://www.google.com/maps/dir/Am+Waldbad+5,+31275+Lehrte/Am+Waldbad+5,+31275+Lehrte",
+                    "Ahlten": "https://www.google.com/maps/dir/Am+Waldbad+5,+31275+Lehrte/Am+Waldbad+5,+31275+Lehrte",
+                    "Lehrte": "https://www.google.com/maps/dir/Am+Waldbad+5,+31275+Lehrte/Am+Waldbad+5,+31275+Lehrte",
+                    "Immensen": "https://www.google.com/maps/dir/Am+Waldbad+5,+31275+Lehrte/Am+Waldbad+5,+31275+Lehrte",
+                    "Sievershausen": "https://www.google.com/maps/dir/Am+Waldbad+5,+31275+Lehrte/Am+Waldbad+5,+31275+Lehrte",
+                    "Hämelerwald": "https://www.google.com/maps/dir/Am+Waldbad+5,+31275+Lehrte/Am+Waldbad+5,+31275+Lehrte"
+                };
+
+                if (routes[group]) {
+                    window.location.href = routes[group];
+                } else {
+                    alert("Bitte wähle eine gültige Gruppe aus.");
+                }
             } else {
                 alert("Falsche Antwort! Bitte versuche es erneut.");
             }
@@ -17,12 +33,22 @@
     </script>
 </head>
 <body>
-    <h2>Aus welchen Ort kommt Ihr?</h2>
-     <input type="text" id="answer1" placeholder="Ort eingeben...">
-    <h1>Welche Flüssigkeit benutzen wir zum Löschen?</h1>
-    <p>Bitte gib deine Antwort an:</p>
-    <input type="text" id="answer" placeholder="Antwort eingeben...">
+    <h1>Gruppenauswahl und Ortsfrage</h1>
+    <p>Bitte wähle deine Gruppe:</p>
+    <select id="group">
+        <option value="">-- Gruppe auswählen --</option>
+        <option value="Arpke">Arpke</option>
+        <option value="Aligse">Aligse</option>
+        <option value="Steinwedel">Steinwedel</option>
+        <option value="Ahlten">Ahlten</option>
+        <option value="Lehrte">Lehrte</option>
+        <option value="Immensen">Immensen</option>
+        <option value="Sievershausen">Sievershausen</option>
+        <option value="Hämelerwald">Hämelerwald</option>
+    </select>
+
+    <p>In welchen Ort befinden wir uns?</p>
+    <input type="text" id="answer" placeholder="Ort eingeben...">
     <button onclick="checkAnswer()">Antwort überprüfen</button>
 </body>
-
 </html>
