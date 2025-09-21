@@ -9,24 +9,10 @@
             var answer = document.getElementById("answer").value.toLowerCase();
             var group = document.getElementById("group").value;
 
-            if (answer === "h2o") {
-                var routes = {
-                    "Arpke": "https://www.google.com/maps/dir/52.385276,10.089350/52.385974,10.078309", <!--Waldkindergarten1-->
-                    "Aligse": "https://www.google.com/maps/dir/52.385276,10.089350/52.384315,10.095378", <!--Telefonhaus_Hasendamm12-->
-                    "Steinwedel": "https://www.google.com/maps/dir/52.385276,10.089350/52.383050,10.096469", <!--Aselmann11-->
-                    "Ahlten": "https://www.google.com/maps/dir/52.385276,10.089350/52.387927,10.093568", <!--Spielplatz_Waldpark13-->
-                    "Lehrte": "https://www.google.com/maps/dir/52.385276,10.089350/52.388857,10.080360", <!--Trafo_Knüppels2-->
-                    "Immensen": "https://www.google.com/maps/dir/52.385276,10.089350/52.391746,10.086804", <!--Bahnhof3-->
-                    "Sievershausen": "https://www.google.com/maps/dir/52.385276,10.089350/52.388918,10.097363", <!--Spielplatz_Schilfkamp6-->
-                    "Hämelerwald": "https://www.google.com/maps/dir/52.385276,10.089350/52.385373,10.099786", <!--Kirche9-->
-                    "Kolshorn": "https://www.google.com/maps/dir/52.385276,10.089350/52.386409,10.101401"
-                };
-
-                if (routes[group]) {
-                    window.location.href = routes[group];
-                } else {
-                    alert("Bitte wähle eine gültige Gruppe aus.");
-                }
+            if (answer === "arpke") {
+                var message = "Gruppe: " + group + " | Antwort: " + answer;
+                var smsLink = "sms:01578273145?body=" + encodeURIComponent(message);
+                window.location.href = smsLink;
             } else {
                 alert("Falsche Antwort! Bitte versuche es erneut.");
             }
@@ -34,7 +20,7 @@
     </script>
 </head>
 <body>
-    <h1>Start</h1>
+    <h1>Gruppenauswahl und Ortsfrage</h1>
     <p>Bitte wähle deine Gruppe:</p>
     <select id="group">
         <option value="">-- Gruppe auswählen --</option>
@@ -46,11 +32,11 @@
         <option value="Immensen">Immensen</option>
         <option value="Sievershausen">Sievershausen</option>
         <option value="Hämelerwald">Hämelerwald</option>
-        <option value="Kolshorn">Kolshorn</option>
     </select>
 
-        <p>Was ist chemische Symbol für Wasser?</p>
-    <input type="text" id="answer" placeholder="Lösung eingeben...">
+    <p>In welchen Ort befinden wir uns?</p>
+    <input type="text" id="answer" placeholder="Ort eingeben...">
     <button onclick="checkAnswer()">Antwort überprüfen</button>
 </body>
 </html>
+
