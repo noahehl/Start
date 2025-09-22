@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ortsfrage mit Gruppen</title>
+    <title>Frage 1</title>
     <script>
         function checkAnswer() {
             var answer = document.getElementById("answer").value.toLowerCase();
             var group = document.getElementById("group").value;
 
-            var message = "Gruppe: " + group + " | Antwort: " + answer;
+            var message = "Gruppe: " + group + " | Antwort Frage 1: " + answer;
             var whatsappLink = "https://wa.me/4915782735145?text=" + encodeURIComponent(message);
             window.location.href = whatsappLink;
         }
     </script>
 </head>
 <body>
-    <h1>Gruppenauswahl und Ortsfrage</h1>
+    <h1>Frage 1</h1>
     <p>Bitte wähle deine Gruppe:</p>
     <select id="group">
         <option value="">-- Gruppe auswählen --</option>
@@ -30,7 +30,7 @@
         <option value="Hämelerwald">Hämelerwald</option>
     </select>
 
-    <p>In welchen Ort befinden wir uns?</p>
+    <p>Warum können Skelette so schlecht lügen?</p>
     <input type="text" id="answer" placeholder="Ort eingeben...">
     <button onclick="checkAnswer()">Antwort überprüfen</button>
 </body>
